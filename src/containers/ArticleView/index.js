@@ -22,12 +22,12 @@ function ArticleView (props) {
 				{ commentsAreOpen
 					? <div>
 						<strong className={'pointer'} onClick={() => setCommentsAreOpen(false)}>
-							Скрыть комментарии &#8593;
+							<a>Скрыть комментарии &#8593;</a>
 						</strong>
 						<CommentsView articleId={article.id} />
 					</div>
 					: <strong  className={'pointer'} onClick={() => setCommentsAreOpen(true)}>
-						Показать комментарии &#8595;
+						<a>Показать комментарии &#8595;</a>
 					</strong>
 				}
 			</div>

@@ -30,6 +30,8 @@
     margin-bottom: 100px;
 }
 
+a:hover { color: aquamarine; }
+
 .article_list-link {
     color: #fff;
     padding: 15px;
