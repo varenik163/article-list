@@ -7,7 +7,7 @@ function Article (props) {
 	return (
 		<div>
 			<h1>{article.title}</h1>
-			<Link className="back_link" to={'/'}>&#8592; Назад</Link>
+			<Link className="back_link" to={'/'}>&#8592; Back</Link>
 			<p className={'article-text'}>{article.body}</p>
 		</div>
 	)

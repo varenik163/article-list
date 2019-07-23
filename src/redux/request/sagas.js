@@ -2,8 +2,6 @@
 import { takeEvery, all, put, call } from 'redux-saga/dist/redux-saga-effects-npm-proxy.esm'
 import { SUCCESS, ERROR, START } from '../../constants'
 
-const API = 'http://api.rentrika.kosmoz.online';
-
 export function* requestSaga(action) {
 	const {
 		payload, method, url, auth, oldType: type,
@@ -36,7 +34,6 @@ export function* requestSaga(action) {
 		);
 
 		const response = yield data.json();
-		// console.log(response)
 
 		if (data.status !== 200 || (data.status === 200 && response.status === 100)) {
 			const error = getError(data, response);
@@ -51,13 +48,7 @@ export function* requestSaga(action) {
 				type: type + SUCCESS,
 				response: {
 					data: response,
-					/*error: response.status === 100 || response.messagesresponse.messages[0].type === 2
-						? response.messages[0].message
-						: null,*/
 					status: 0,
-					/*message: response.status === 0 || (response.messages && response.messages[0].type === 0)
-						? response.messages[0].message
-						: null*/
 				}
 			});
 		}
